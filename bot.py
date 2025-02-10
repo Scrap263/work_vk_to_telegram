@@ -151,7 +151,7 @@ async def monitor_vk_groups():
                 for group in VK_GROUPS:
                     try:
                         logger.info(f"Проверка группы: {group}")
-                        await page.goto(f'https://vk.com/{group}', timeout=60000, waitUntil="load")
+                        await page.goto(f'https://vk.com/{group}', timeout=60000, wait_until="load")
                         await page.wait_for_load_state('load')
 
                         posts = await page.query_selector_all('.post')
